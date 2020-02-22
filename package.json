@@ -1,0 +1,19 @@
+{
+  "name": "cody",
+  "version": "1.0.0",
+  "description": "bot multi-funcional",
+  "main": "./client/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "Márcio",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.1.0",
+    "require-all": "^3.0.0"
+  }
+}
