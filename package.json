@@ -4,16 +4,18 @@
   "description": "bot multi-funcional",
   "main": "./client/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
   },
   "keywords": [
     "discord"
   ],
-  "author": "Márcio",
+  "author": "DMVMarcio",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
     "dotenv": "^8.1.0",
+    "mongoose": "^5.9.2",
     "require-all": "^3.0.0"
   }
 }

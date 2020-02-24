@@ -1,6 +1,4 @@
-
-
-module.exports.CODY ={
+module.exports.CODY = {
     listeners: './listeners',
     commands : './commands'
 }

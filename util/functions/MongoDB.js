@@ -1,0 +1,32 @@
+const { connect, model } = require('mongoose');
+const { readdirSync } = require('fs');
+module.exports = class Base {
+    constructor(client) {
+        this.client = client;
+        this._connected = false;
+
+        this.connect(process.env.MONGODB);
+    }
+    connect(login = '') {
+        connect(login, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+            if (err) return console.log(`[MongoDB] Falha ao conectar!\n${err}`);
+            console.log(`[MongoDB] Conectado com sucesso!`);
+            this.connected = true;
+            this.loadSchemas();
+        });
+    }
+    loadSchemas() {
+        const files = readdirSync('./util/schemas/').map(file => file.split('.')[0]);
+        for(var i = 0, length = files.length; i < length; i++) {
+            const file = files[i];
+            const schema = model(file, require(`../schemas/${file}.js`));
+            this[file] = schema;
+        }
+    }
+    get connected() {
+        return this._connected;
+    }
+    set connected(value) {
+        this._connected = value;
+    }
+}

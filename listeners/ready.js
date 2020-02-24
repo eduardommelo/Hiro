@@ -1,4 +1,4 @@
-module.exports = (client) =>{
-    console.log('Bot ' + client.user.tag + ' ligado com sucesso.')
-    client.register.fileCommands('./commands')
+module.exports = (client) => {
+    console.log('[DiscordBot] ' + client.user.tag + ' iniciado com sucesso.');
+    client.register.fileCommands('./commands');
 }
