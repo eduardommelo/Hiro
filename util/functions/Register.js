@@ -19,7 +19,7 @@ module.exports = class Register {
         }
     }
     verifyAliases(commandAliases) {
-        this.commands.map(cmd =>{
+        this.commands.map(cmd => {
             if(cmd.aliases === commandAliases) throw new Error('[Command] Foi encontrado comandos alternativos duplicados.');
 
         })

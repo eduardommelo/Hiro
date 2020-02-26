@@ -1,4 +1,4 @@
-const { connect, model } = require('mongoose');
+const { connect, model, Types } = require('mongoose');
 const { readdirSync } = require('fs');
 module.exports = class Base {
     constructor(client) {
@@ -22,6 +22,16 @@ module.exports = class Base {
             const schema = model(file, require(`../schemas/${file}.js`));
             this[file] = schema;
         }
+    }
+    async findOrCreate(collection = '', finder = {}, options = {}) {
+        if(finder === {} || collection === '') return {};
+        const check = await this[collection].findOne(finder);
+        if(check) return check;
+        const _id = options._findOrCreateid || finder._id || Types.ObjectId();
+        const toCreate = Object.assign(options, {_id});
+        const document = new this[collection](toCreate);
+        document.save();
+        return document;
     }
     get connected() {
         return this._connected;

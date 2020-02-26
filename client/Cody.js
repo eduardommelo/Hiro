@@ -23,12 +23,12 @@ module.exports =  class Cody extends Client {
         this.login(options.token)
     }
     get owners () {
-        return this._owners
+        return this._owners;
     }
     get token() {
-        return this._token
+        return this._token;
     }
     get prefix() {
-        return this._prefix
+        return this._prefix;
     }
 }
