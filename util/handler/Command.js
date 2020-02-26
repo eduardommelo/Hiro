@@ -9,7 +9,7 @@ module.exports = class Command {
         this.mePermission = !options.mePermission ? false : options.mePermission;
         this.isOwner = !options.isOwner ? false : options.isOwner;
     }
-    async run({message, args}) {
+    async run({message, args, userDB, guildDB}) {
         throw new Error('[Command] Informe a função .run({})');
     }
 }
