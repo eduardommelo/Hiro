@@ -6,5 +6,9 @@ module.exports = new Schema({
     prefix: {
         type: String,
         default: process.env.PREFIX
+    },
+    lang: {
+        type: String,
+        default: 'ptBR'
     }
 })

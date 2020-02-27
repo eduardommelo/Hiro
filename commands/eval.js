@@ -7,7 +7,7 @@ module.exports = class Ping extends Command {
             description: 'Execute códigos utilizando o bot.',
         })
     }
-    async run({message, args, userDB, guildDB}) {
+    async run({message, args, userDB, guildDB, t}) {
         if(!this.client.owners.includes(message.author.id)) return;
         if(!args[0]) return;
         const code = args.join('');
