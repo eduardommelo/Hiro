@@ -1,6 +1,6 @@
 const {Collection} = require('discord.js')
 module.exports = class Base {
-    constructor(client, userDB, guildDB) {
+    constructor(client) {
         this.client = client;
         this.cooldown = new Collection();
     }

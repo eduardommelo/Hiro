@@ -1,6 +1,7 @@
 const { Client } = require('discord.js');
 const Constants = require('../util/Constants');
 const Base = require('../util/Base');
+const Staff = require('../util/functions/Staff');
 const Register = require('../util/functions/Register');
 const Database = require('../util/functions/MongoDB');
 const fs = require('fs');
@@ -13,6 +14,7 @@ module.exports =  class Cody extends Client {
         this._prefix = options.prefix;
         this.register = new Register(this);
         this.database = new Database(this);
+        this.staff = new Staff(this);
         this.constants = Constants;
         fs.readdir(Constants.CODY.listeners, (err, files) => {
             for(var i = 0; i < [...files].length; i++) {
@@ -20,7 +22,7 @@ module.exports =  class Cody extends Client {
                 this.on(file.split(".")[0], require(`../listeners/${file}`).bind(null, this));
             }
         })
-        this.login(options.token)
+        this.login(options.token);
     }
     get owners () {
         return this._owners;

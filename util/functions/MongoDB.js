@@ -1,10 +1,11 @@
 const { connect, model, Types } = require('mongoose');
 const { readdirSync } = require('fs');
-module.exports = class Base {
+module.exports = class MongoDB {
     constructor(client) {
         this.client = client;
         this._connected = false;
 
+        this.loadSchemas();
         this.connect(process.env.MONGODB);
     }
     connect(login = '') {
@@ -12,7 +13,6 @@ module.exports = class Base {
             if (err) return console.log(`[MongoDB] Falha ao conectar!\n${err}`);
             console.log(`[MongoDB] Conectado com sucesso!`);
             this.connected = true;
-            this.loadSchemas();
         });
     }
     loadSchemas() {
