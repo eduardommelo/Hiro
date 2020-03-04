@@ -6,12 +6,12 @@
   "scripts": {
     "start": "node ."
   },
+  "license": "AGPLv3",
   "keywords": [
     "discord",
     "bot"
   ],
   "author": "DMVMarcio && eduardommelo && shimahaucks",
-  "license": "ISC",
   "dependencies": {
     "discord.js": "^12.0.1",
     "dotenv": "^8.1.0",

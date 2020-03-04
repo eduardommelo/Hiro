@@ -6,4 +6,4 @@
 
 
 #### LICENSE
-O Cody utiliza a licença **ISC**, quaisquer alterações devem ser relatadas a comunidade.
+O Cody utiliza a licença **AGPLv3**, quaisquer alterações devem ser relatadas a comunidade.
