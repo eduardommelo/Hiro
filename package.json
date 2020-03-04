@@ -4,13 +4,13 @@
   "description": "bot multi-funcional",
   "main": "./client/Shard.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
   },
   "keywords": [
-    "discord"
+    "discord",
+    "bot"
   ],
-  "author": "DMVMarcio && eduardommelo",
+  "author": "DMVMarcio && eduardommelo && shimahaucks",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.0.1",

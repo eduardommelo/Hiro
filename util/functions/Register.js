@@ -1,4 +1,6 @@
 const { Collection } = require('discord.js');
+const { join } = require('path');
+const { readdirSync, lstatSync } = require('fs');
 module.exports = class Register {
    constructor(client) {
         this.client = client;
@@ -25,20 +27,20 @@ module.exports = class Register {
         })
     }
     fileCommands(path) {
-        const fs = require('fs');
-        const doThings = path => fs.readdirSync(path).map(a => fs.lstatSync(path + '/' + a).isDirectory() ? doThings(`${path}/${a}`) : require(`../../${path}/${a}`));
-        let commands = Object.values(doThings(path));
-        let getCommands = [];
-        for(var i = 0; i < commands.length; i++) {
-            if(typeof commands[i] === 'function') commands[i] = new commands[i](this.client);
-            if(Array.isArray(commands[i])) commands[i] = this.subPath(commands[i]);
+        path = join(__dirname, '../', '../', path);
+        const doThings = path => readdirSync(path).map(a => lstatSync(path + '/' + a).isDirectory() ? doThings(`${path}/${a}`) : require(`${path}/${a}`));
+        const commands = Object.values(doThings(path));
+        const getCommands = [];
+        for(var i = 0, length = commands.length; i < length; i++) {
+            if (typeof commands[i] === 'function') commands[i] = new commands[i](this.client);
+            if (Array.isArray(commands[i])) commands[i] = this.subPath(commands[i]);
             getCommands.push(commands[i]);
         }
         this.registerCommands(getCommands);
     }
     subPath(path) {
         if(!Array.isArray(path)) return;
-        for(var i = 0; i < path.length; i++) {
+        for(var i = 0, length = path.length; i < length; i++) {
             if(typeof path[i] === 'function') path[i] = new path[i](this.client);
             if(Array.isArray(path[i])) path[i] = this.subPath(path[i]);
             return path[i];

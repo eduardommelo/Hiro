@@ -13,11 +13,14 @@ module.exports = class Base {
     }
     emitCommand(message, userDB, guildDB, t) {
         if(message.author.bot || message.channel.type === 'dm') return;
-        const prefix = guildDB.prefix || this.client.prefix;
-        if(message.content.indexOf(prefix) !== 0) return;
-        const args = message.content.split(' ');
-        const argsAlt = [...args].join(' ').trim().split(/ +/g).slice(1);
-        const command = args.shift().toLowerCase().slice(prefix.length);
+        const id = this.client.user.id;
+        const prefixes = [guildDB.prefix || this.client.prefix, `<@${id}>`, `<@!${id}>`];
+        const prefix = prefixes.find(p => message.content.startsWith(p)) || '';
+        if(!message.content.startsWith(prefix) || message.content === prefix) return;
+        const args = message.content.slice(prefix.length).trim().split(' ');
+        const argsAlt = [...args].join(' ').split(/ +/g).slice(1);
+        const command = [...args].join(' ').split(/ +/g).shift().toLowerCase();
+        args.shift();
         const cmdRun = this.client.register.commands.find(c => c.command === command || c.aliases.includes(command));
         if(cmdRun) {
             cmdRun.run({message, args, argsAlt, prefix, command, userDB, guildDB, t});

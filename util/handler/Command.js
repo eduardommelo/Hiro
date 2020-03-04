@@ -4,9 +4,6 @@ module.exports = class Command {
         this.command = options.command;
         this.aliases = !options.aliases ? false : options.aliases;
         this.label = options.label || [];
-        this.hasPermission = !options.hasPermission ? false : options.hasPermission;
-        this.mePermission = !options.mePermission ? false : options.mePermission;
-        this.isOwner = !options.isOwner ? false : options.isOwner;
     }
     async run({message, args, userDB, guildDB}) {
         throw new Error('[Command] Informe a função .run({})');
