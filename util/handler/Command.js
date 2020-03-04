@@ -3,7 +3,6 @@ module.exports = class Command {
         this.client = client;
         this.command = options.command;
         this.aliases = !options.aliases ? false : options.aliases;
-        this.description = options.description;
         this.label = options.label || [];
         this.hasPermission = !options.hasPermission ? false : options.hasPermission;
         this.mePermission = !options.mePermission ? false : options.mePermission;

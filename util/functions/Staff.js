@@ -13,6 +13,9 @@ module.exports = class Staff {
             }
         })
     }
+    hasSomeRoles(roles, to_have) {
+        return to_have.some(role => roles.includes(role));
+    }
     updateCache(userDB) {
         const id = userDB._id;
         if(!this.isStaff(userDB)) return this._list.delete(id);
@@ -51,6 +54,14 @@ module.exports = class Staff {
     async isStaff(userDB = null, user_id = null) {
         if(user_id) userDB = await this.database.findOrCreate('Users', {_id: user_id});
         return userDB.roles.some(role => this._roles.includes(role));
+    }
+    isHigher(role, to_compare = 'designer') {
+        const rolePosition = this._roles.indexOf(role) * (-1)
+        const comparePosition = this._roles.indexOf(to_compare) * (-1)
+        return rolePosition > comparePosition;
+    }
+    get roles() {
+        return this._roles;
     }
     get list() {
         return this._list;

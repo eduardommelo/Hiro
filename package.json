@@ -10,10 +10,10 @@
   "keywords": [
     "discord"
   ],
-  "author": "DMVMarcio",
+  "author": "DMVMarcio && eduardommelo",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
+    "discord.js": "^12.0.1",
     "dotenv": "^8.1.0",
     "mongoose": "^5.9.2",
     "require-all": "^3.0.0"

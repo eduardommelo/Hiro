@@ -1,1 +1,13 @@
-{}
+{
+    "staffrole": {
+        "dontHaveRole": "<:warning:683847826601541695> {{member}}, Este **comando** só está **disponível** para {{roles}}.",
+        "noAction": "<:warning:683847826601541695> {{member}}, Você deve **informar** uma **ação válida** para **ser realizada**. **(**{{actions}}**)**",
+        "invalidFormat": "<:warning:683847826601541695> {{member}}, Você deve **utilizar** este **comando** com o **formato abaixo**:\n**~** `{{format}}`",
+        "noRole": "<:warning:683847826601541695> {{member}}, Você deve **especificar** um **cargo**. **(**{{roles}}**)**",
+        "roleHigher": "<:warning:683847826601541695> {{member}}, Você **não** pode **adicionar ou remover** este cargo.",
+        "hasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** já **possui o cargo** `{{role}}`.",
+        "noHasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** parece **não possuir o cargo** `{{role}}`.",
+        "added": "<:ok:684777226117447697> {{member}}, Você **adicionou o cargo** `{{role}}` ao **usuário** `{{target}}`.",
+        "removed": "<:ok:684777226117447697> {{member}}, Você **removeu o cargo** `{{role}}` do **usuário** `{{target}}`."
+    }
+}
