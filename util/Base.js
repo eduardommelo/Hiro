@@ -27,16 +27,19 @@ module.exports = class Base {
         }
     }
     translate(lang = 'ptBR', path = '', values = {}) {
-        const file = require(`../locales/${lang}/${path.split(':')[0]}.json`);
-        const replacers = Object.keys(values);
-        const splited = path.split(':')[1].split('.');
-        let getter = file;
-        for(var i = 0, length = splited.length; i < length; i++) {
-            getter = getter[splited[i]];
-        }
-        for(var i = 0, length = replacers.length; i < length; i++) {
-            getter = getter.split(`{{${replacers[i]}}}`).join(values[replacers[i]])
-        }
-        return getter;
+        try {
+            const file = require(`../locales/${lang}/${path.split(':')[0]}.json`);
+            const replacers = Object.keys(values);
+            const splited = path.split(':')[1].split('.');
+            let getter = file;
+            for(var i = 0, length = splited.length; i < length; i++) {
+                if(getter[splited[i]]) getter = getter[splited[i]];
+                else { return path; };
+            }
+            for(var i = 0, length = replacers.length; i < length; i++) {
+                getter = getter.split(`{{${replacers[i]}}}`).join(values[replacers[i]])
+            }
+            return getter;
+        } catch(e) { return path; };
     }
 }
