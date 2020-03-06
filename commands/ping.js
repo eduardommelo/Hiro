@@ -6,7 +6,7 @@ module.exports = class Ping extends Command {
             aliases: ['p', 'latency']
         })
     }
-    async run({message}) {
+    async run({ message, args }) {
         message.channel.send('teste');
     }
 }

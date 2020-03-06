@@ -1,10 +1,6 @@
 const { Client } = require('discord.js');
-const Constants = require('../util/Constants');
-const Base = require('../util/Base');
-const Staff = require('../util/functions/Staff');
-const Register = require('../util/functions/Register');
-const Database = require('../util/functions/MongoDB');
-const fs = require('fs');
+const { Base, Constants, Functions: { Database, Register, Staff } } = require('../util');
+const { readdir } = require('fs');
 module.exports =  class Cody extends Client {
     constructor(options = []) {
         super();
@@ -16,7 +12,7 @@ module.exports =  class Cody extends Client {
         this.database = new Database(this);
         this.staff = new Staff(this);
         this.constants = Constants;
-        fs.readdir(Constants.CODY.listeners, (err, files) => {
+        readdir(Constants.CODY.listeners, (err, files) => {
             for(var i = 0; i < [...files].length; i++) {
                 const file = files[i];
                 this.on(file.split(".")[0], require(`../listeners/${file}`).bind(null, this));

@@ -6,12 +6,12 @@ module.exports = class Staff {
         this._roles = ['owner', 'subowner', 'operator', 'developer', 'supervisor', 'designer'];
         this._list = new Map();
 
-        connection.on('open', async() => {
-            const usersDB = await this.database.Users.find({'roles': { $in: this._roles }})
+        connection.on('open', async () => {
+            const usersDB = await this.database.Users.find({ 'roles': { $in: this._roles }});
             for(var i = 0, length = usersDB.length; i < length; i++) {
                 this.updateCache(usersDB[i]);
             }
-        })
+        });
     }
     hasSomeRoles(roles, to_have) {
         return to_have.some(role => roles.includes(role));
