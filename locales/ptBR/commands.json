@@ -1,9 +1,10 @@
 {
     "staffrole": {
+        "howToUse": "<:info:685326537116876800> Como usar:",
+        "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - adiciona um cargo ao usuário.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - remove um cargo do usuário.",
+        "rolesTitle": "<:searchdoc:685354681798492176> Cargos:",
         "dontHaveRole": "<:warning:683847826601541695> {{member}}, Este **comando** só está **disponível** para {{roles}}.",
-        "noAction": "<:warning:683847826601541695> {{member}}, Você deve **informar** uma **ação válida** para **ser realizada**. **(**{{actions}}**)**",
-        "invalidFormat": "<:warning:683847826601541695> {{member}}, Você deve **utilizar** este **comando** com o **formato abaixo**:\n**~** `{{format}}`",
-        "noRole": "<:warning:683847826601541695> {{member}}, Você deve **especificar** um **cargo**. **(**{{roles}}**)**",
+        "invalidRole": "<:warning:683847826601541695> {{member}}, Cargo **não especificado** ou **não encontrado**.",
         "roleHigher": "<:warning:683847826601541695> {{member}}, Você **não** pode **adicionar ou remover** este cargo.",
         "hasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** já **possui o cargo** `{{role}}`.",
         "noHasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** parece **não possuir o cargo** `{{role}}`.",

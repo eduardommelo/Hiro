@@ -1,9 +1,10 @@
 {
     "staffrole": {
+        "howToUse": "<:info:685326537116876800> How to use:",
+        "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - add a role to the user.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - removes a role from the user.",
+        "rolesTitle": "<:searchdoc:685354681798492176> Roles:",
         "dontHaveRole": "<:warning:683847826601541695> {{member}}, This **command** is only **avaliable** for {{roles}}.",
-        "noAction": "<:warning:683847826601541695> {{member}}, You need to **specify** an **valid action** to **be performed**. **(**{{actions}}**)**",
-        "invalidFormat": "<:warning:683847826601541695> {{member}}, You **need to use** this **command** with the **format below**:\n**~** `{{format}}`",
-        "noRole": "<:warning:683847826601541695> {{member}}, You need to **specify** an **role**. **(**{{roles}}**)**",
+        "invalidRole": "<:warning:683847826601541695> {{member}}, Role **not specified** or **not found**.",
         "roleHigher": "<:warning:683847826601541695> {{member}}, You can **not** **add or remove** this role.",
         "hasRole": "<:warning:683847826601541695> {{member}}, The **selected user** already **has the** `{{role}}` **role**.",
         "noHasRole": "<:warning:683847826601541695> {{member}}, The **selected user** does **not have the** `{{role}}` **role**.",

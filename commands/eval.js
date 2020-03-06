@@ -1,4 +1,4 @@
-const Command = require('../util/handler/Command')
+const Command = require('../util/handler/Command');
 module.exports = class Eval extends Command {
     constructor(client) {
         super(client, {
