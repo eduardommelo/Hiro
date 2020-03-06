@@ -7,7 +7,7 @@ module.exports = class Eval extends Command {
         })
     }
     async run({message, args, argsAlt, userDB, guildDB, t}) {
-        if(!this.client.owners.includes(message.author.id)) return;
+        if(!this.client.staff.hasSomeRoles(userDB.roles, ['owner', 'subowner', 'operator, developer']) && message.author.id !== this.client.owner) return;
         if(!args[0]) return;
         const code = args.join(' ');
         try {

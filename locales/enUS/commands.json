@@ -1,7 +1,7 @@
 {
     "staffrole": {
         "howToUse": "<:info:685326537116876800> How to use:",
-        "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - add a role to the user.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - removes a role from the user.",
+        "usageFormats": "`{{prefix}}{{command}} add <@mention/id> <role>` - add a role to the user.\n`{{prefix}}{{command}} remove <@mention/id> <role>` - removes a role from the user.\n`{{prefix}}{{command}} check <@mention/id>` - check user roles.",
         "rolesTitle": "<:searchdoc:685354681798492176> Roles:",
         "dontHaveRole": "<:warning:683847826601541695> {{member}}, This **command** is only **avaliable** for {{roles}}.",
         "invalidRole": "<:warning:683847826601541695> {{member}}, Role **not specified** or **not found**.",
@@ -9,6 +9,7 @@
         "hasRole": "<:warning:683847826601541695> {{member}}, The **selected user** already **has the** `{{role}}` **role**.",
         "noHasRole": "<:warning:683847826601541695> {{member}}, The **selected user** does **not have the** `{{role}}` **role**.",
         "added": "<:ok:684777226117447697> {{member}}, You **added the role** `{{role}}` to the **user** `{{target}}`.",
-        "removed": "<:ok:684777226117447697> {{member}}, You **removed the role** `{{role}}` from **user** `{{target}}`."
+        "removed": "<:ok:684777226117447697> {{member}}, You **removed the role** `{{role}}` from **user** `{{target}}`.",
+        "checkTitle": "{{user}}'s roles:"
     }
 }

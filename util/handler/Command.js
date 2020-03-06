@@ -5,7 +5,7 @@ module.exports = class Command {
         this.aliases = !options.aliases ? false : options.aliases;
         this.label = options.label || [];
     }
-    async run({message, args, userDB, guildDB}) {
+    run() {
         throw new Error('[Command] Informe a função .run({})');
     }
 }
