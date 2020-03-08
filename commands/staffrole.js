@@ -1,4 +1,4 @@
-const Command = require('../util/handler/Command');
+const { Command } = require('../util');
 const { MessageEmbed } = require('discord.js');
 module.exports = class Staff extends Command {
     constructor(client) {
@@ -25,7 +25,7 @@ module.exports = class Staff extends Command {
             .setTimestamp(new Date())
             .setFooter(message.author.username, message.author.displayAvatarURL())
             .setColor(5289);
-        if(!this.client.staff.hasSomeRoles(userDB.roles, this._allowedRoles)) return message.channel.send(t('commands:staffrole.dontHaveRole', { 
+        if(!this.client.staff.hasSomeRoles(userDB.roles, this._allowedRoles)) return message.channel.send(t('commands:staffrole.dontHaveRole', {
             member: message.member,
             roles: this._allowedRoles.map(role => `\`${role}\``).join(', ')
         }));
