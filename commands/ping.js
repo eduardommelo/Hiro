@@ -9,11 +9,16 @@ module.exports = class Ping extends Command {
   }
   async run({ message, args }) {
     const embed = new Embed().cody();
-    const shards = this.client.ws.shards;
-    const shardSelected = Number.isNaN(Number.parseInt(args[0])) ? 0 : Number.parseInt(args[0]) || 0;
-    if (shardSelected > shards.size) return message.channel.send(embed.setDescription('não existe.'));
-    const shard = shards.array()[shardSelected];
+    const number = isNaN(args[0]) ? message.guild.shard.id : (parseInt(args[0]) -1);
+    const shards = await this.client.shard.broadcastEval('this.ws');
+    const shardSelected = shards[number];
 
-    return message.channel.send(embed.setDescription('teste'));
+    if (!shardSelected) return message.channel.send(embed.setDescription('Essa shard não existe.'));
+
+    const { shards: [shard] } = shardSelected;
+
+    const m = await message.channel.send(embed.setDescription('Procurando informações, aguarde.'));
+
+    await m.edit(embed.setTitle(`Shard[${shard.id + 1}/${shards.length}]`).setDescription(`📡 Latência da API: **${~~shard.ping}ms**\n📨 Tempo de resposta: **${m.createdAt - message.createdAt}ms**`));
   }
 }
