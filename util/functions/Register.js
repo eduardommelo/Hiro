@@ -46,4 +46,12 @@ module.exports = class Register {
             return path[i];
         }
     }
+    async registerEvents(path) {
+      path = join(__dirname, '../', '../', path);
+      const files = await readdirSync(path);
+      for(var i = 0, length = [...files].length; i < length; i++) {
+        const file = files[i];
+        this.client.on(file.split(".")[0], require(join(path, file)).bind(null, this.client));
+      }
+    }
 }

@@ -12,13 +12,11 @@ module.exports =  class Cody extends Client {
         this.database = new Database(this);
         this.staff = new Staff(this);
         this.constants = Constants;
-        readdir(Constants.CODY.listeners, (err, files) => {
-            for(var i = 0, length = [...files].length; i < length; i++) {
-                const file = files[i];
-                this.on(file.split(".")[0], require(`../listeners/${file}`).bind(null, this));
-            }
-        })
         this.login(options.token);
+    }
+    async login(token = this.options.token) {
+      await this.register.registerEvents('listeners');
+      return super.login(token);
     }
     get owner () {
         return this._owner;
