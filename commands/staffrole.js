@@ -4,7 +4,8 @@ module.exports = class Staff extends Command {
     constructor(client) {
         super(client, {
             command: 'staffrole',
-            aliases: ['staffroles', 'stfrole', 'stfroles']
+            aliases: ['staffroles', 'stfrole', 'stfroles'],
+            usage: (language, prefix) => language('commands:staffrole.usage', { prefix })
         })
         this._allowedRoles = ['owner', 'subowner', 'operator'];
         this._actions = [{

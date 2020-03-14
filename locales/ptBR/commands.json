@@ -10,6 +10,24 @@
         "noHasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** parece **não possuir o cargo** `{{role}}`.",
         "added": "<:ok:684777226117447697> {{member}}, Você **adicionou o cargo** `{{role}}` ao **usuário** `{{target}}`.",
         "removed": "<:ok:684777226117447697> {{member}}, Você **removeu o cargo** `{{role}}` do **usuário** `{{target}}`.",
-        "checkTitle": "Cargos de {{user}}:"
+        "checkTitle": "Cargos de {{user}}:",
+        "usage": "{{prefix}}staffrole",
+        "description": "Staff",
+        "category": "Desenvolvedores"
+    },
+    "help": {
+      "usage": "{{prefix}}help [comando]",
+      "description": "Mostra os comandos.",
+      "category": "Utilitários"
+    },
+    "eval": {
+      "usage": "{{prefix}}eval <argumento>",
+      "description": "Executa um código no client.",
+      "category": "Desenvolvedores"
+    },
+    "ping": {
+      "usage": "{{prefix}}ping [shard]",
+      "description": "Mostra o ping.",
+      "category": "Utilitários"
     }
 }

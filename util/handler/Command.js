@@ -4,6 +4,7 @@ module.exports = class Command {
         this.command = options.command;
         this.aliases = !options.aliases ? false : options.aliases;
         this.label = options.label || [];
+        this.usage = options.usage || 'Não definido!';
     }
     run() {
         throw new Error('[Command] Informe a função .run({})');

@@ -4,7 +4,8 @@ module.exports = class Eval extends Command {
   constructor(client) {
     super(client, {
       command: 'eval',
-      aliases: ['e', 'execute']
+      aliases: ['e', 'execute'],
+      usage: (language, prefix) => language('commands:eval.usage', { prefix })
     })
   }
   async run({ message, args, argsAlt, userDB, guildDB, t }) {
