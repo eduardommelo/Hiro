@@ -5,10 +5,11 @@ module.exports = class Eval extends Command {
     super(client, {
       command: 'eval',
       aliases: ['e', 'execute'],
-      usage: (language, prefix) => language('commands:eval.usage', { prefix })
+      usage: (language, prefix) => language('commands:eval.usage', { prefix }),
+      category: (language) => language('commands:eval.category')
     })
   }
-  async run({ message, args, argsAlt, userDB, guildDB, t }) {
+  async run({ message, args, argsAlt, userDB, guildDB, t, prefix }) {
     if(!this.client.staff.hasSomeRoles(userDB.roles, ['owner', 'subowner', 'operator', 'developer']) && message.author.id !== this.client.owner) return;
     let insert = args.join(' ').replace('--silent', '').replace('--async', '');
 

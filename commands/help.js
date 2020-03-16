@@ -11,17 +11,29 @@ module.exports = class Help extends Command {
   }
   async run({ message, args, t, prefix }) {
     const embed = new Embed().cody();
+    const categories = await this.categories(t, prefix);
+    let arrayOfCommands = '';
+    for(const key in categories) {
+      arrayOfCommands += `\`\`\`ini\n[ ${key} ]`;
+      for(const cmd of categories[key]) arrayOfCommands += `\n; ${prefix}${cmd.command}     ::     ${this.isFunction(cmd.usage) ? cmd.usage(t, prefix) : cmd.usage}`;
+      arrayOfCommands += '```';
+    }
+    embed.setDescription(`\n${arrayOfCommands}`);
     message.channel.send(embed.setAuthor('HELP'));
 
   }
-  // get categories() {
-  //   return this.client.register.commands.reduce((elements, command) => {
-  //     if (!elements[command.category]) {
-  //       elements[command.category] = [];
-  //     }
+  categories(t, prefix) {
+    return this.client.register.commands.reduce((elements, command) => {
+      command.category = this.isFunction(command.category) ? command.category(t, prefix) : command.category;
+      if (!elements[command.category]) {
+        elements[command.category] = [];
+      }
 
-  //     elements[command.category].push(command);
-  //     return elements;
-  //   }, {});
-  // }
+      elements[command.category].push(command);
+      return elements;
+    }, {});
+  }
+  isFunction(input) {
+    return typeof input === 'function';
+  }
 }

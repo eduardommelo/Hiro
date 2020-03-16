@@ -5,7 +5,8 @@ module.exports = class Ping extends Command {
     super(client, {
       command: 'ping',
       aliases: ['p', 'latency'],
-      usage: (language, prefix) => language('commands:ping.usage', { prefix })
+      usage: (language, prefix) => language('commands:ping.usage', { prefix }),
+      category: (language) => language('commands:ping.category')
     })
   }
   async run({ message, args }) {
