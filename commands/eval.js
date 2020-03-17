@@ -6,7 +6,8 @@ module.exports = class Eval extends Command {
       command: 'eval',
       aliases: ['e', 'execute'],
       usage: (language, prefix) => language('commands:eval.usage', { prefix }),
-      category: (language) => language('commands:eval.category')
+      category: (language) => language('commands:eval.category'),
+      description: (language) => language('commands:eval.description')
     })
   }
   async run({ message, args, argsAlt, userDB, guildDB, t, prefix }) {
@@ -20,11 +21,11 @@ module.exports = class Eval extends Command {
       const cleanEvaled = this.clean(util.inspect(evaled, { depth: 0 }));
       if (args.includes('--silent')) return null;
       if (cleanEvaled.length > 1800) {
-        return message.channel.send({ files: [{ attachment: Buffer.from(cleanEvaled), name: 'output.txt' }], content: 'O resultado ficou muito grande, enviando em um ficheiro.' });
+        return message.send({ files: [{ attachment: Buffer.from(cleanEvaled), name: 'output.txt' }], content: 'O resultado ficou muito grande, enviando em um ficheiro.' });
       };
-      await message.channel.send(`** 📤 Output**\n` + '```js\n' + cleanEvaled + '\n```' + `**Tipo: \`\`\`js\n${type}\`\`\`**`);
+      await message.send(`** 📤 Output**\n` + '```js\n' + cleanEvaled + '\n```' + `**Tipo: \`\`\`js\n${type}\`\`\`**`);
     } catch (err) {
-      await message.channel.send('** 📤 Error**\n' + '```prolog\n' + err + '\n```');
+      await message.send('** 📤 Error**\n' + '```prolog\n' + err + '\n```');
     }
   };
 

@@ -1,4 +1,9 @@
 {
+    "errors": {
+      "noDescription": "Não definido!",
+      "noUsage": "Não definido!",
+      "noCategory": "Outros"
+    },
     "staffrole": {
         "howToUse": "<:info:685326537116876800> Como usar:",
         "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - adiciona um cargo ao usuário.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - remove um cargo do usuário.\n`{{prefix}}{{command}} check <@menção/id>` - verifica os cargos do usuário.",

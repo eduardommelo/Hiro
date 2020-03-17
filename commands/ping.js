@@ -6,7 +6,8 @@ module.exports = class Ping extends Command {
       command: 'ping',
       aliases: ['p', 'latency'],
       usage: (language, prefix) => language('commands:ping.usage', { prefix }),
-      category: (language) => language('commands:ping.category')
+      category: (language) => language('commands:ping.category'),
+      description: (language) => language('commands:ping.description')
     })
   }
   async run({ message, args }) {
@@ -15,11 +16,11 @@ module.exports = class Ping extends Command {
     const shards = await this.client.shard.broadcastEval('this.ws');
     const shardSelected = shards[number];
 
-    if (!shardSelected) return message.channel.send(embed.setDescription('Essa shard não existe.'));
+    if (!shardSelected) return message.send(embed.setDescription('Essa shard não existe.'));
 
     const { shards: [shard] } = shardSelected;
 
-    const m = await message.channel.send(embed.setDescription('Procurando informações, aguarde.'));
+    const m = await message.send(embed.setDescription('Procurando informações, aguarde.'));
 
     await m.edit(embed.setTitle(`Shard[${shard.id + 1}/${shards.length}]`).setDescription(`📡 Latência da API: **${~~shard.ping}ms**\n📨 Tempo de resposta: **${m.createdAt - message.createdAt}ms**`));
   }

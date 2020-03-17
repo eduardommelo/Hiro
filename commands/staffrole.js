@@ -6,7 +6,8 @@ module.exports = class Staff extends Command {
             command: 'staffrole',
             aliases: ['staffroles', 'stfrole', 'stfroles'],
             usage: (language, prefix) => language('commands:staffrole.usage', { prefix }),
-            category: (language) => language('commands:staffrole.category')
+            category: (language) => language('commands:staffrole.category'),
+            description: (language) => language('commands:staffrole.description')
         })
         this._allowedRoles = ['owner', 'subowner', 'operator'];
         this._actions = [{
@@ -27,7 +28,7 @@ module.exports = class Staff extends Command {
             .setTimestamp(new Date())
             .setFooter(message.author.username, message.author.displayAvatarURL())
             .setColor(5289);
-        if(!this.client.staff.hasSomeRoles(userDB.roles, this._allowedRoles)) return message.channel.send(t('commands:staffrole.dontHaveRole', {
+        if(!this.client.staff.hasSomeRoles(userDB.roles, this._allowedRoles)) return message.send(t('commands:staffrole.dontHaveRole', {
             member: message.member,
             roles: this._allowedRoles.map(role => `\`${role}\``).join(', ')
         }));
@@ -36,36 +37,36 @@ module.exports = class Staff extends Command {
             || action.aliases.includes(argsAlt[0].toLowerCase())).name
             || false
             : false;
-        if(!action) return message.channel.send(errorEmbed);
+        if(!action) return message.send(errorEmbed);
         const another = ['check'].includes(action);
         const user = argsAlt[1] ?
             message.mentions.users.first()
             || await this.client.users.fetch(argsAlt[1]).catch(() => {return false})
             || false
             : false;
-        if(!user || (argsAlt[1].replace(/[^0-9]/g, '') !== user.id)) return message.channel.send(errorEmbed);
+        if(!user || (argsAlt[1].replace(/[^0-9]/g, '') !== user.id)) return message.send(errorEmbed);
         const role = argsAlt[2] ? this.client.staff.roles.find(role => role === argsAlt[2].toLowerCase()) || false : false;
-        if(!role && !another) return message.channel.send(t('commands:staffrole.invalidRole', { member: message.member }), errorEmbed);
-        if(!this.client.staff.isHigher(this.client.staff.highestRole(userDB.roles), role) && !another) return message.channel.send(t('commands:staffrole.roleHigher', {
+        if(!role && !another) return message.send(t('commands:staffrole.invalidRole', { member: message.member }), errorEmbed);
+        if(!this.client.staff.isHigher(this.client.staff.highestRole(userDB.roles), role) && !another) return message.send(t('commands:staffrole.roleHigher', {
             member: message.member
         }), errorEmbed);
         const targetDB = await this.client.database.findOrCreate('Users', {_id: user.id});
         switch(action) {
             case 'add': {
-                if(targetDB.roles.includes(role)) return message.channel.send(t('commands:staffrole.hasRole', {
+                if(targetDB.roles.includes(role)) return message.send(t('commands:staffrole.hasRole', {
                     member: message.member,
                     role
                 }));
                 this.client.staff.addRole(user.id, role);
-                message.channel.send(t('commands:staffrole.added', { member: message.member, role, target: user.tag }));
+                message.send(t('commands:staffrole.added', { member: message.member, role, target: user.tag }));
             } break;
             case 'remove': {
-                if(!targetDB.roles.includes(role)) return message.channel.send(t('commands:staffrole.noHasRole', {
+                if(!targetDB.roles.includes(role)) return message.send(t('commands:staffrole.noHasRole', {
                     member: message.member,
                     role
                 }));
                 this.client.staff.removeRole(user.id, role);
-                message.channel.send(t('commands:staffrole.removed', { member: message.member, role, target: user.tag }));
+                message.send(t('commands:staffrole.removed', { member: message.member, role, target: user.tag }));
             } break;
             case 'check': {
                 const result = new MessageEmbed()
@@ -75,7 +76,7 @@ module.exports = class Staff extends Command {
                     .setTimestamp(new Date())
                     .setFooter(message.author.username, message.author.displayAvatarURL())
                     .setColor(5289);
-                message.channel.send(result);
+                message.send(result);
             }
         }
     }

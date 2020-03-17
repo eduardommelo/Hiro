@@ -3,5 +3,6 @@ module.exports = {
     Base: require('./Base'),
     Functions: require('./functions'),
     Command: require('./handler/Command'),
-    Embed: require('./extendables/RichEmbed')
+    Embed: require('./extendables/RichEmbed'),
+    struct: require('./structures'),
 }

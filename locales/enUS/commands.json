@@ -1,4 +1,9 @@
 {
+    "errors": {
+      "noDescription": "Description not defined",
+      "noUsage": "Usage not defined",
+      "noCategory": "Others"
+    },
     "staffrole": {
         "howToUse": "<:info:685326537116876800> How to use:",
         "usageFormats": "`{{prefix}}{{command}} add <@mention/id> <role>` - add a role to the user.\n`{{prefix}}{{command}} remove <@mention/id> <role>` - removes a role from the user.\n`{{prefix}}{{command}} check <@mention/id>` - check user roles.",
@@ -10,6 +15,24 @@
         "noHasRole": "<:warning:683847826601541695> {{member}}, The **selected user** does **not have the** `{{role}}` **role**.",
         "added": "<:ok:684777226117447697> {{member}}, You **added the role** `{{role}}` to the **user** `{{target}}`.",
         "removed": "<:ok:684777226117447697> {{member}}, You **removed the role** `{{role}}` from **user** `{{target}}`.",
-        "checkTitle": "{{user}}'s roles:"
+        "checkTitle": "{{user}}'s roles:",
+        "usage": "{{prefix}}staffrole",
+        "description": "Staff",
+        "category": "Developers"
+    },
+    "help": {
+      "usage": "{{prefix}}help [command]",
+      "description": "Show my commands panel.",
+      "category": "Utilities"
+    },
+    "eval": {
+      "usage": "{{prefix}}eval <argumento>",
+      "description": "Eval Command.",
+      "category": "Developers"
+    },
+    "ping": {
+      "usage": "{{prefix}}ping [shard]",
+      "description": "Latency.",
+      "category": "Utilities"
     }
 }
