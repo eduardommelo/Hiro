@@ -4,18 +4,14 @@ module.exports = class Help extends Command {
   constructor(client) {
     super(client, {
       command: 'help',
-      aliases: ['ajuda', 'comandos'],
-      usage: (language, prefix) => language('commands:help.usage', { prefix }),
-      category: (language) => language('commands:help.category'),
-      description: (language) => language('commands:help.description')
+      aliases: ['ajuda', 'comandos']
     });
   }
-  async run({ message, args, t, prefix }) {
+  async run({ message, args, guildDB, t }) {
+    const prefix = guildDB.prefix || process.env.PREFIX;
     const embed = new Embed().cody();
     const categories = await this.categories(t, prefix);
     let arrayOfCommands = '';
-
-    // Gambiarra para fazer os espaços bonitinhos na embed.
 
     let length = 0;
     let before = 3;

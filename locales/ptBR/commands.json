@@ -1,9 +1,13 @@
 {
     "errors": {
-      "noDescription": "Não definido!",
-      "noUsage": "Não definido!",
-      "noCategory": "Outros"
-    },
+		"noDescription": "Não definido!",
+		"noUsage": "Não definido!",
+		"noCategory": "Outros"
+	},
+	"ping": {
+		"invalidShard": "<:warning:683847826601541695> Você inseriu uma shard inválida.",
+		"result": "📡 Latência da API: **{{shardPing}}ms**\n📨 Tempo de resposta: **{{responseTime}}ms**"
+	},
     "staffrole": {
         "howToUse": "<:info:685326537116876800> Como usar:",
         "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - adiciona um cargo ao usuário.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - remove um cargo do usuário.\n`{{prefix}}{{command}} check <@menção/id>` - verifica os cargos do usuário.",
@@ -15,24 +19,6 @@
         "noHasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** parece **não possuir o cargo** `{{role}}`.",
         "added": "<:ok:684777226117447697> {{member}}, Você **adicionou o cargo** `{{role}}` ao **usuário** `{{target}}`.",
         "removed": "<:ok:684777226117447697> {{member}}, Você **removeu o cargo** `{{role}}` do **usuário** `{{target}}`.",
-        "checkTitle": "Cargos de {{user}}:",
-        "usage": "{{prefix}}staffrole",
-        "description": "Staff",
-        "category": "Desenvolvedores"
-    },
-    "help": {
-      "usage": "{{prefix}}help [comando]",
-      "description": "Mostra os comandos.",
-      "category": "Utilitários"
-    },
-    "eval": {
-      "usage": "{{prefix}}eval <argumento>",
-      "description": "Executa um código no client.",
-      "category": "Desenvolvedores"
-    },
-    "ping": {
-      "usage": "{{prefix}}ping [shard]",
-      "description": "Mostra o ping.",
-      "category": "Utilitários"
+        "checkTitle": "Cargos de {{user}}:"
     }
 }

@@ -1,4 +1,4 @@
 module.exports = {
-  prototype: require('./Prototype'),
-  Message: require('./MessageRespond')
+    prototype: require('./Prototype'),
+    Message: require('./MessageRespond')
 }

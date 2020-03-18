@@ -15,11 +15,8 @@ module.exports =  class Cody extends Client {
         this.login(options.token);
     }
     async login(token = this.options.token) {
-      await this.register.registerEvents('listeners');
-      return super.login(token);
-    }
-    get owner () {
-        return this._owner;
+        await this.register.registerEvents('listeners');
+        return super.login(token);
     }
     get token() {
         return this._token;

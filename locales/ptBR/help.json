@@ -1,0 +1,22 @@
+{
+    "staffrole": {
+        "usage": "{{prefix}}staffrole",
+        "description": "Staff",
+        "category": "Desenvolvedores"
+    },
+    "help": {
+        "usage": "{{prefix}}help [comando]",
+        "description": "Mostra os comandos.",
+        "category": "Utilitários"
+      },
+    "eval": {
+        "usage": "{{prefix}}eval <argumento>",
+        "description": "Executa um código no client.",
+        "category": "Desenvolvedores"
+    },
+    "ping": {
+        "usage": "{{prefix}}ping [shard]",
+        "description": "Mostra o ping.",
+        "category": "Utilitários"
+    }
+}

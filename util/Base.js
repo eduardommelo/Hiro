@@ -1,4 +1,4 @@
-const {Collection} = require('discord.js')
+const { Collection } = require('discord.js')
 module.exports = class Base {
     constructor(client) {
         this.client = client;
@@ -6,13 +6,13 @@ module.exports = class Base {
     }
     async emitMessage(msg) {
         const message = Array.isArray(msg) ? msg[1] : msg;
+        if(message.author.bot || message.channel.type === 'dm') return;
         const userDB = await this.client.database.findOrCreate('Users', {_id: message.author.id});
         const guildDB = await this.client.database.findOrCreate('Guilds', {_id: message.guild.id});
         const t = (path, values) => { return this.translate(guildDB.lang, path, values) }
         this.emitCommand(message, userDB, guildDB, t);
     }
     emitCommand(message, userDB, guildDB, t) {
-        if(message.author.bot || message.channel.type === 'dm') return;
         const id = this.client.user.id;
         const prefixes = [guildDB.prefix || this.client.prefix, `<@${id}>`, `<@!${id}>`];
         const prefix = prefixes.find(p => message.content.startsWith(p)) || '';
@@ -34,12 +34,12 @@ module.exports = class Base {
             let getter = file;
             for(var i = 0, length = splited.length; i < length; i++) {
                 if(getter[splited[i]]) getter = getter[splited[i]];
-                else { return path; };
+                else { return false; };
             }
             for(var i = 0, length = replacers.length; i < length; i++) {
                 getter = getter.split(`{{${replacers[i]}}}`).join(values[replacers[i]])
             }
             return getter;
-        } catch(e) { return path; };
+        } catch(e) { return false; };
     }
 }
