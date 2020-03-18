@@ -4,5 +4,7 @@ module.exports = {
     Functions: require('./functions'),
     Command: require('./handler/Command'),
     Embed: require('./extendables/RichEmbed'),
-    struct: require('./structures')
+    struct: require('./structures'),
+    Emotes: require('./extendables/Emotes'),
+    Emojis: require('./assets/Emojis')
 }

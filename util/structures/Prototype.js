@@ -8,3 +8,6 @@ Array.prototype.chunk = function(chunkSize) {
 	}
 	return R;
 }
+String.prototype.equals = function (another) {
+	return another.toLowerCase() === this.toLowerCase();
+};

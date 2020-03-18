@@ -1,5 +1,5 @@
 const { Client } = require('discord.js');
-const { Base, Constants, Functions: { Database, Register, Staff } } = require('../util');
+const { Base, Constants, Emotes, Emojis, Functions: { Database, Register, Staff } } = require('../util');
 const { readdir } = require('fs');
 module.exports =  class Cody extends Client {
     constructor(options = {}) {
@@ -13,6 +13,7 @@ module.exports =  class Cody extends Client {
         this.staff = new Staff(this);
         this.constants = Constants;
         this.login(options.token);
+        this.emotes = new Emotes(this, Emojis)
     }
     async login(token = this.options.token) {
         await this.register.registerEvents('listeners');
