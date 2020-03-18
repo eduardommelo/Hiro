@@ -1,8 +1,8 @@
 const { MessageEmbed } = require('discord.js');
-module.exports = class CodyEmbed extends MessageEmbed {
+module.exports = class Embed extends MessageEmbed {
 	constructor(...args) {
 		super(...args);
-		this._color = 5289;
-		this.cody = () => this.setColor(this._color);
+		this._defaultColor = 5289;
+		this.cody = () => this.setColor(this._defaultColor);
 	};
 }

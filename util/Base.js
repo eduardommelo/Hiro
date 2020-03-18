@@ -1,4 +1,5 @@
-const { Collection } = require('discord.js')
+const { Collection } = require('discord.js');
+const Emotes = require('./assets/Emojis.json');
 module.exports = class Base {
     constructor(client) {
         this.client = client;
@@ -30,11 +31,15 @@ module.exports = class Base {
         try {
             const file = require(`../locales/${lang}/${path.split(':')[0]}.json`);
             const replacers = Object.keys(values);
+            const emojis = Object.keys(Emotes);
             const splited = path.split(':')[1].split('.');
             let getter = file;
             for(var i = 0, length = splited.length; i < length; i++) {
                 if(getter[splited[i]]) getter = getter[splited[i]];
                 else { return false; };
+            }
+            for(var i = 0, length = emojis.length; i < length; i++) {
+                getter = getter.split(`<{${emojis[i]}}>`).join(Emotes[emojis[i]])
             }
             for(var i = 0, length = replacers.length; i < length; i++) {
                 getter = getter.split(`{{${replacers[i]}}}`).join(values[replacers[i]])

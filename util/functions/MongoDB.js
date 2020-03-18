@@ -33,10 +33,6 @@ module.exports = class MongoDB {
         document.save();
         return document;
     }
-    get connected() {
-        return this._connected;
-    }
-    set connected(value) {
-        this._connected = value;
-    }
+    get connected() { return this._connected };
+    set connected(value) { this._connected = value };
 }

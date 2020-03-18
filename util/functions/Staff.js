@@ -60,10 +60,6 @@ module.exports = class Staff {
         const comparePosition = this._roles.indexOf(to_compare) * (-1)
         return rolePosition > comparePosition;
     }
-    get roles() {
-        return this._roles;
-    }
-    get list() {
-        return this._list;
-    }
+    get roles() { return this._roles };
+    get list() { return this._list };
 }

@@ -5,20 +5,20 @@
 		"noCategory": "Outros"
 	},
 	"ping": {
-		"invalidShard": "<:warning:683847826601541695> Você inseriu uma shard inválida.",
+		"invalidShard": "<{warning}> {{member}}, Você **deve inserir** uma **shard válida**.",
 		"result": "📡 Latência da API: **{{shardPing}}ms**\n📨 Tempo de resposta: **{{responseTime}}ms**"
 	},
     "staffrole": {
-        "howToUse": "<:info:685326537116876800> Como usar:",
+        "howToUse": "<{info}> Como usar:",
         "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - adiciona um cargo ao usuário.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - remove um cargo do usuário.\n`{{prefix}}{{command}} check <@menção/id>` - verifica os cargos do usuário.",
-        "rolesTitle": "<:searchdoc:685354681798492176> Cargos:",
-        "dontHaveRole": "<:warning:683847826601541695> {{member}}, Este **comando** só está **disponível** para {{roles}}.",
-        "invalidRole": "<:warning:683847826601541695> {{member}}, Cargo **não especificado** ou **não encontrado**.",
-        "roleHigher": "<:warning:683847826601541695> {{member}}, Você **não** pode **adicionar ou remover** este cargo.",
-        "hasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** já **possui o cargo** `{{role}}`.",
-        "noHasRole": "<:warning:683847826601541695> {{member}}, O **usuário selecionado** parece **não possuir o cargo** `{{role}}`.",
-        "added": "<:ok:684777226117447697> {{member}}, Você **adicionou o cargo** `{{role}}` ao **usuário** `{{target}}`.",
-        "removed": "<:ok:684777226117447697> {{member}}, Você **removeu o cargo** `{{role}}` do **usuário** `{{target}}`.",
+        "rolesTitle": "<{searchdoc}> Cargos:",
+        "dontHaveRole": "<{warning}> {{member}}, Este **comando** só está **disponível** para {{roles}}.",
+        "invalidRole": "<{warning}> {{member}}, Cargo **não especificado** ou **não encontrado**.",
+        "roleHigher": "<{warning}> {{member}}, Você **não** pode **adicionar ou remover** este cargo.",
+        "hasRole": "<{warning}> {{member}}, O **usuário selecionado** já **possui o cargo** `{{role}}`.",
+        "noHasRole": "<{warning}> {{member}}, O **usuário selecionado** parece **não possuir o cargo** `{{role}}`.",
+        "added": "<{ok}> {{member}}, Você **adicionou o cargo** `{{role}}` ao **usuário** `{{target}}`.",
+        "removed": "<{ok}> {{member}}, Você **removeu o cargo** `{{role}}` do **usuário** `{{target}}`.",
         "checkTitle": "Cargos de {{user}}:"
     }
 }
