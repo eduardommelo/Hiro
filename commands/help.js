@@ -9,7 +9,10 @@ module.exports = class Help extends Command {
   }
   async run({ message, args, guildDB, t }) {
     const prefix = guildDB.prefix || process.env.PREFIX;
-    const embed = new Embed().cody();
+    const embed = new Embed()
+      .setAuthor(t('commands:help.title'), this.client.user.avatarURL({ format: 'png', size: 2048 }))
+      .setColor(message.guild.me.displayColor || embed._defaultColor)
+      .setFooter(t('commands:help.footer'));
     const categories = await this.categories(t, prefix);
     let arrayOfCommands = '';
 
@@ -32,11 +35,10 @@ module.exports = class Help extends Command {
         .join('');
         arrayOfCommands += `\n; ${prefix}${cmd.command} ${spaces} ::   ${this.isFunction(cmd.description) ? cmd.description(t, prefix) : cmd.description}`;
       }
-      arrayOfCommands += '```';
+      arrayOfCommands += '\n```\n';
     }
-    embed.setDescription(`\n${arrayOfCommands}`);
-    message.send(embed.setAuthor('HELP'));
-
+    embed.setDescription(`\n${t('commands:help.description', { cmd: t('help:help.usage', { prefix }) })}\n\n${arrayOfCommands}\n`);
+    message.send(embed);
   }
   categories(t, prefix) {
     return this.client.register.commands.reduce((elements, command) => {

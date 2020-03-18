@@ -4,6 +4,11 @@
         "noUsage": "Usage not defined!",
         "noCategory": "Others"
     },
+    "help": {
+        "description": "**Use `{{cmd}}` to see more details of a command!**",
+        "footer": "Remember, [arg] is an optional argument and <arg> is a necessary argument for executing the command!",
+        "title": "Here are some of my commands!"
+    },
 	"ping": {
 		"invalidShard": "<{warning}> {{member}}, You **need insert** a **valid shard**",
 		"result": "📡 API Latency: **{{shardPing}}ms**\n📨 Response time: **{{responseTime}}ms**"
