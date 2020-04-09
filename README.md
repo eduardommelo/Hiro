@@ -1,9 +1,17 @@
-<p align="center"> <br> <img width="256" src="https://cdn.discordapp.com/avatars/507292506942210048/1c30bebe60d9d88ee8819f0a9b70eb3d.png?size=256"> <br> </p>
+<p align="center">
+  <img src="https://cdn.discordapp.com/avatars/507292506942210048/1c30bebe60d9d88ee8819f0a9b70eb3d.png" width="240"/>
+</p>
 
-![Cody ~ Discord Server](https://discordapp.com/api/guilds/507295947789828106/embed.png)
+# Cody - 2.0.0
+> [DISCORD.JS](https://discord.js.org)
+> [BOT INVITE](https://discordapp.com/oauth2/authorize?client_id=507292506942210048&scope=bot&permissions=2146958591)
+> [DISCORD SERVER](https://discord.gg/5Xt3uHF)
+> License **AGPLv3**
 
-> <p align="center"> <h1>Cody!</h1> </p>
+## Usage
+Commands for this bot follow this structure: `c![argument]`.
 
-
-#### LICENSE
-O Cody utiliza a licença **AGPLv3**, quaisquer alterações devem ser relatadas a comunidade.
+| Command  | Description                             |
+|----------|-----------------------------------------|
+| `c!help` | See all available commands.             |
+| `c!info` | See everyone who contributed to the robot. |
