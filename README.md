@@ -3,9 +3,9 @@
 </p>
 
 # Cody - 2.0.0
-> [DISCORD.JS](https://discord.js.org)
-> [BOT INVITE](https://discordapp.com/oauth2/authorize?client_id=507292506942210048&scope=bot&permissions=2146958591)
-> [DISCORD SERVER](https://discord.gg/5Xt3uHF)
+> [DISCORD.JS](https://discord.js.org) <br>
+> [BOT INVITE](https://discordapp.com/oauth2/authorize?client_id=507292506942210048&scope=bot&permissions=2146958591) <br>
+> [DISCORD SERVER](https://discord.gg/5Xt3uHF) <br>
 > License **AGPLv3**
 
 ## Usage
