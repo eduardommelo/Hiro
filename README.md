@@ -15,3 +15,8 @@ Commands for this bot follow this structure: `c![argument]`.
 |----------|-----------------------------------------|
 | `c!help` | See all available commands.             |
 | `c!info` | See everyone who contributed to the robot. |
+
+## Contributors
+
+* [@DMVMarcio](https://github.com/DMVMarcio)
+* [@eduardommelo](https://github.com/eduardommelo)
