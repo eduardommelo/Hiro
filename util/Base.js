@@ -1,15 +1,16 @@
 const { Collection } = require('discord.js');
-const Emotes = require('./assets/Emojis.json');
+const Emojis = require('./Assets/Emojis.json');
 module.exports = class Base {
     constructor(client) {
         this.client = client;
+        this.database = this.client.database;
         this.cooldown = new Collection();
     }
     async emitMessage(msg) {
         const message = Array.isArray(msg) ? msg[1] : msg;
         if(message.author.bot || message.channel.type === 'dm') return;
-        const userDB = await this.client.database.findOrCreate('Users', {_id: message.author.id});
-        const guildDB = await this.client.database.findOrCreate('Guilds', {_id: message.guild.id});
+        const userDB = await this.database.findOrCreate('Users', {_id: message.author.id});
+        const guildDB = await this.database.findOrCreate('Guilds', {_id: message.guild.id});
         const t = (path, values) => { return this.translate(guildDB.lang, path, values) }
         this.emitCommand(message, userDB, guildDB, t);
     }
@@ -31,17 +32,17 @@ module.exports = class Base {
         try {
             const file = require(`../locales/${lang}/${path.split(':')[0]}.json`);
             const replacers = Object.keys(values);
-            const emojis = Object.keys(Emotes);
+            const emojis = Object.keys(Emojis);
             const splited = path.split(':')[1].split('.');
             let getter = file;
             for(var i = 0, length = splited.length; i < length; i++) {
                 if(getter[splited[i]]) getter = getter[splited[i]];
                 else { return false; };
             }
-            for(var i = 0, length = emojis.length; i < length; i++) {
-                getter = getter.split(`<{${emojis[i]}}>`).join(Emotes[emojis[i]])
+            for(var i = 0, length = emojis.length; i < length && ((typeof getter) === 'string'); i++) {
+                getter = getter.split(`<{${emojis[i]}}>`).join(Emojis[emojis[i]])
             }
-            for(var i = 0, length = replacers.length; i < length; i++) {
+            for(var i = 0, length = replacers.length; i < length && ((typeof getter) === 'string'); i++) {
                 getter = getter.split(`{{${replacers[i]}}}`).join(values[replacers[i]])
             }
             return getter;

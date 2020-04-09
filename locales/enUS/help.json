@@ -1,22 +1,20 @@
 {
+    "categories": {
+        "-1": "Others",
+        "0": "Staff"
+    },
+    "errors": {
+        "noDescription": "Not defined!",
+        "noUsage": ["Not defined!"],
+        "noCategory": "-1"
+    },
     "staffrole": {
-        "usage": "{{prefix}}staffrole",
-        "description": "Staff",
-        "category": "Developers"
-    },
-    "help": {
-        "usage": "{{prefix}}help [command]",
-        "description": "Show my commands panel.",
-        "category": "Utilities"
-    },
-    "eval": {
-        "usage": "{{prefix}}eval <argumento>",
-        "description": "Eval Command.",
-        "category": "Developers"
-    },
-    "ping": {
-        "usage": "{{prefix}}ping [shard]",
-        "description": "Latency.",
-        "category": "Utilities"
+        "description": "",
+        "category": "0",
+        "usages": [
+            "add <@mention/id> <role>",
+            "remove <@mention/id> <role>",
+            "check <@mention/id>"
+        ]
     }
 }

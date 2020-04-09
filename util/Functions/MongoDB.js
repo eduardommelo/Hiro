@@ -16,10 +16,10 @@ module.exports = class MongoDB {
         });
     }
     loadSchemas() {
-        const files = readdirSync('./util/schemas/').map(file => file.split('.')[0]);
+        const files = readdirSync('./util/Schemas/').map(file => file.split('.')[0]);
         for(var i = 0, length = files.length; i < length; i++) {
             const file = files[i];
-            const schema = model(file, require(`../schemas/${file}.js`));
+            const schema = model(file, require(`../Schemas/${file}.js`));
             this[file] = schema;
         }
     }

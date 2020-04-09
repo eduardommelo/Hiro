@@ -1,18 +1,4 @@
 {
-    "errors": {
-        "noDescription": "Não definido!",
-        "noUsage": "Não definido!",
-        "noCategory": "Outros"
-    },
-    "help": {
-        "description": "**Utilize `{{cmd}}` para ver mais detalhes de um comando!**",
-        "footer": "Lembre-se, [arg] é um argumento opcional e <arg> é um argumento necessário para a execução do comando!",
-        "title": "Aqui estão alguns dos meus comandos!"
-    },
-    "ping": {
-        "invalidShard": "<{warning}> {{member}}, Você **deve inserir** uma **shard válida**.",
-        "result": "📡 Latência da API: **{{shardPing}}ms**\n📨 Tempo de resposta: **{{responseTime}}ms**"
-    },
     "staffrole": {
         "howToUse": "<{info}> Como usar:",
         "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - adiciona um cargo ao usuário.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - remove um cargo do usuário.\n`{{prefix}}{{command}} check <@menção/id>` - verifica os cargos do usuário.",
