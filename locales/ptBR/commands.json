@@ -1,4 +1,8 @@
 {
+    "avatar": {
+        "title": "<{feliz}> **Avatar de {{target}}:**",
+        "download": "Download: **[clique aqui]({{link}})**"
+    },
     "eval": {
         "noCode": "<{duvida}> {{member}}, Você deve inserir um código para que eu possa executá-lo.",
         "code": "<{duvida}> Código:",

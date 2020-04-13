@@ -45,6 +45,12 @@ module.exports = class Base {
             for(var i = 0, length = replacers.length; i < length && ((typeof getter) === 'string'); i++) {
                 getter = getter.split(`{{${replacers[i]}}}`).join(values[replacers[i]])
             }
+            const id = this.client.user.id
+            const mentions = [`<@${id}>`, `<@!${id}>`]
+            for(var i = 0, length = mentions.length; i < length; i++) {
+                const mention = mentions[i];
+                if(getter.includes(mention)) getter = getter.split(mention).join(`@Hiro `);
+            }
             return getter;
         } catch(e) { console.log(e); return false; };
     }
