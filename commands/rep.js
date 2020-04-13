@@ -1,5 +1,4 @@
-const { Command, Emojis } = require('../util');
-const { MessageEmbed } = require('discord.js');
+const { Command } = require('../util');
 const moment = require('moment');
 require('moment-duration-format');
 moment.locale('pt-BR');
@@ -14,7 +13,7 @@ module.exports = class Rep extends Command {
         const member = message.member;
         const target = argsAlt[0] ?
             message.mentions.users.first()
-            || await this.client.users.fetch(argsAlt[1]).catch(() => {return false})
+            || await this.client.users.cache.fetch(argsAlt[1]).catch(() => {return false})
             : false;
         const remaining = (userDB.rep.last + 86400000) - Date.now();
         if(remaining > 0 || (remaining <= 0 && !target)) return message.channel.send(t(`commands:rep.${remaining > 0 ? 'noAction' : 'timeFinished' }`, {
