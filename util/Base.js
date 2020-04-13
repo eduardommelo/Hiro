@@ -17,15 +17,15 @@ module.exports = class Base {
     emitCommand(message, userDB, guildDB, t) {
         const id = this.client.user.id;
         const prefixes = [guildDB.prefix || this.client.prefix, `<@${id}>`, `<@!${id}>`];
-        const prefix = prefixes.find(p => message.content.startsWith(p)) || '';
-        if(!message.content.startsWith(prefix) || message.content === prefix) return;
+        const prefix = prefixes.find(p => message.content.startsWith(p)) || false;
+        if(!prefix || !message.content.startsWith(prefix) || message.content === prefix) return;
         const args = message.content.slice(prefix.length).trim().split(' ');
         const argsAlt = [...args].join(' ').split(/ +/g).slice(1);
         const command = [...args].join(' ').split(/ +/g).shift().toLowerCase();
         args.shift();
         const cmdRun = this.client.register.commands.find(c => c.command === command || c.aliases.includes(command));
         if(cmdRun) {
-            cmdRun.run({message, args, argsAlt, prefix, command, userDB, guildDB, t});
+            cmdRun.run({message, args, argsAlt, prefix, command, userDB, guildDB, t, firstUpperLetter: this.firstUpperLetter});
         }
     }
     translate(lang = 'ptBR', path = '', values = {}) {
@@ -46,6 +46,7 @@ module.exports = class Base {
                 getter = getter.split(`{{${replacers[i]}}}`).join(values[replacers[i]])
             }
             return getter;
-        } catch(e) { return false; };
+        } catch(e) { console.log(e); return false; };
     }
+    firstUpperLetter (str = 'no string') { return str[0].toUpperCase() + str.slice(1) };
 }

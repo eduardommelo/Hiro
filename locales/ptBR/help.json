@@ -8,6 +8,11 @@
         "noUsages": ["Não definido!"],
         "noCategory": "-1"
     },
+    "eval": {
+        "description": "",
+        "category": "0",
+        "usages": [ "<código>" ]
+    },
     "staffrole": {
         "description": "",
         "category": "0",

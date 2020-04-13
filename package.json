@@ -1,6 +1,6 @@
 {
   "name": "cody",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "bot multi-funcional",
   "main": "./client/Shard.js",
   "scripts": {
@@ -15,6 +15,8 @@
   "dependencies": {
     "discord.js": "^12.0.1",
     "dotenv": "^8.1.0",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.3.2",
     "mongoose": "^5.9.2",
     "require-all": "^3.0.0"
   }

@@ -1,4 +1,4 @@
-const { Command } = require('../util');
+const { Command, Emojis } = require('../util');
 const { MessageEmbed } = require('discord.js');
 module.exports = class Staff extends Command {
     constructor(client) {
@@ -18,23 +18,24 @@ module.exports = class Staff extends Command {
             aliases: ['verify', 'ver', 'view']
         }]
     }
-    async run({message, argsAlt, prefix, command, userDB, t}) {
+    async run({message, argsAlt, prefix, command, userDB, t, firstUpperLetter}) {
         const errorEmbed = new MessageEmbed()
             .addField(t('commands:staffrole.howToUse'), t('commands:staffrole.usageFormats', { prefix, command }))
             .addField(t('commands:staffrole.rolesTitle'), this.client.staff.roles.map(role => `\`${role}\``).join(' **|** '))
             .setTimestamp(new Date())
             .setFooter(message.author.username, message.author.displayAvatarURL())
-            .setColor(5289);
+            .setColor(this.client.config.mainColor);
         if(!this.client.staff.hasSomeRoles(userDB.roles, this._allowedRoles)) return message.channel.send(t('commands:staffrole.dontHaveRole', {
             member: message.member,
             roles: this._allowedRoles.map(role => `\`${role}\``).join(', ')
         }));
-        const action = argsAlt[0] ?
+        let action = argsAlt[0] ?
             this._actions.find(action => action.name === argsAlt[0].toLowerCase()
-            || action.aliases.includes(argsAlt[0].toLowerCase())).name
+            || action.aliases.includes(argsAlt[0].toLowerCase()))
             || false
             : false;
         if(!action) return message.channel.send(errorEmbed);
+        action = action.name;
         const another = ['check'].includes(action);
         const user = argsAlt[1] ?
             message.mentions.users.first()
@@ -44,7 +45,7 @@ module.exports = class Staff extends Command {
         if(!user || (argsAlt[1].replace(/[^0-9]/g, '') !== user.id)) return message.channel.send(errorEmbed);
         const role = argsAlt[2] ? this.client.staff.roles.find(role => role === argsAlt[2].toLowerCase()) || false : false;
         if(!role && !another) return message.channel.send(t('commands:staffrole.invalidRole', { member: message.member }), errorEmbed);
-        if(!this.client.staff.isHigher(this.client.staff.highestRole(userDB.roles), role) && !another) return message.channel.send(t('commands:staffrole.roleHigher', {
+        if((!this.client.staff.isHigher(this.client.staff.highestRole(userDB.roles), role) && message.author.id !== this.client.owner) && !another) return message.channel.send(t('commands:staffrole.roleHigher', {
             member: message.member
         }), errorEmbed);
         const targetDB = await this.client.database.findOrCreate('Users', {_id: user.id});
@@ -68,11 +69,11 @@ module.exports = class Staff extends Command {
             case 'check': {
                 const result = new MessageEmbed()
                     .setAuthor(t('commands:staffrole.checkTitle', { user: user.username }), user.displayAvatarURL())
-                    .setDescription(targetDB.roles.map(role => `\`${role}\``).join(' **|** '))
-                    .setThumbnail(user.displayAvatarURL())
+                    .addField(t('commands:staffrole.checkRoles'), (targetDB.roles.map(role => `${Emojis['code']} ${firstUpperLetter(role)}`).join('\n') || t('commands:staffrole.noRoles')))
+                    .addField(t('commands:staffrole.checkAddTitle', { user: user.username }), t('commands:staffrole.checkAdd', { prefix, command }))
                     .setTimestamp(new Date())
                     .setFooter(message.author.username, message.author.displayAvatarURL())
-                    .setColor(5289);
+                    .setColor(this.client.config.mainColor);
                 message.channel.send(result);
             }
         }

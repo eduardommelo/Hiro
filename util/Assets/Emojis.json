@@ -1,7 +1,10 @@
 {
-    "DEFAULT": "<:warning:683847826601541695>",
-    "warning": "<:warning:683847826601541695>",
-    "ok": "<:ok:684777226117447697>",
-    "info": "<:info:685326537116876800>",
-    "searchdoc": "<:searchdoc:685354681798492176>"
+    "DEFAULT": "<:hiroduvida:697893740726976627>",
+    "ok": "<a:Positivo:601914489289441284>",
+    "code": "<:code:569367293729964032>",
+    "duvida": "<:hiroduvida:697893740726976627>",
+    "carente": "<:hirocarente:697893766832586820>",
+    "feliz": "<:hirofeliz:697893714529353829>",
+    "aviso": "<a:aviso:698927675351367781>",
+    "bdiscord": "<a:blob_discord:697911464815755364>"
 }

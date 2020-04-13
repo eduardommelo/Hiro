@@ -7,4 +7,8 @@ module.exports = new Schema({
         type: Array,
         default: [] // ['owner', 'subowner', 'operator', 'developer', 'supervisor', 'designer']
     },
+    rep: {
+        type: Object,
+        default: { total: 0, last: 0 }
+    }
 })

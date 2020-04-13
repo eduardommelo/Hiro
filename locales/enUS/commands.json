@@ -1,15 +1,25 @@
 {
+    "eval": {
+        "noCode": "<{duvida}> {{member}}, You must enter a code so that I can execute it.",
+        "code": "<{duvida}> Code:",
+        "result": "<{feliz}> Result:",
+        "error": "<{carente}> Error:"
+    },
     "staffrole": {
-        "howToUse": "<{info}> How to use:",
+        "howToUse": "<{duvida}> How to use:",
         "usageFormats": "`{{prefix}}{{command}} add <@mention/id> <role>` - add a role to the user.\n`{{prefix}}{{command}} remove <@mention/id> <role>` - removes a role from the user.\n`{{prefix}}{{command}} check <@mention/id>` - check user roles.",
-        "rolesTitle": "<{searchdoc}> Roles:",
-        "dontHaveRole": "<{warning}> {{member}}, This **command** is only **avaliable** for {{roles}}.",
-        "invalidRole": "<{warning}> {{member}}, Role **not specified** or **not found**.",
-        "roleHigher": "<{warning}> {{member}}, You **can't add or remove** this role.",
-        "hasRole": "<{warning}> {{member}}, The **selected user** already **has the** `{{role}}` **role**.",
-        "noHasRole": "<{warning}> {{member}}, The **selected user** does **not have the** `{{role}}` **role**.",
-        "added": "<{ok}> {{member}}, You **added the role** `{{role}}` to the **user** `{{target}}`.",
-        "removed": "<{ok}> {{member}}, You **removed the role** `{{role}}` from **user** `{{target}}`.",
-        "checkTitle": "{{user}}'s roles:"
+        "rolesTitle": "<{feliz}> Roles:",
+        "dontHaveRole": "<{duvida}> {{member}}, This command is only avaliable for {{roles}}.",
+        "invalidRole": "<{duvida}> {{member}}, Role not specified or not found.",
+        "roleHigher": "<{duvida}> {{member}}, You can't **add or remove** this role.",
+        "hasRole": "<{duvida}> {{member}}, The selected user already has the `{{role}}` role.",
+        "noHasRole": "<{duvida}> {{member}}, The selected user does not have the `{{role}}` **role**.",
+        "added": "<{ok}> {{member}}, You `added` the role `{{role}}` to the user `{{target}}`.",
+        "removed": "<{ok}> {{member}}, You `removed` the role `{{role}}` from user `{{target}}`.",
+        "checkTitle": "These are currently the roles of {{user}}:",
+        "checkRoles": "Roles assigned to the user:",
+        "noRoles": "This user doesn't have any role.",
+        "checkAddTitle": "If you want to add more roles to {{user}}, use:",
+        "checkAdd": "`{{prefix}}{{command}} add <@mention/id> <role>`"
     }
 }

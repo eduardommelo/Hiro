@@ -1,15 +1,32 @@
 {
+    "eval": {
+        "noCode": "<{duvida}> {{member}}, Você deve inserir um código para que eu possa executá-lo.",
+        "code": "<{duvida}> Código:",
+        "result": "<{feliz}> Resultado:",
+        "error": "<{carente}> Erro:"
+    },
+    "rep": {
+        "noAction": "{{member}}, Hm... Parece que você não pode dar um `ponto de reputação` ainda! <{aviso}>\nVolte daqui **{{time}}** para tentar novamente!",
+        "timeFinished": "{{member}}, Yay! <{feliz}> Você já pode dar um ponto de reputação para alguém!\n<{duvida}> Apenas utilize: `{{prefix}}{{command}} <@menção/id>`",
+        "yourself": "{{member}} **Hey!!** Você nao pode dar `pontos de reputação` para você mesmo. <{duvida}>",
+        "botMention": "{{member}} **Hey!!** Você nao pode dar `pontos de reputação` para um robô. <{duvida}>",
+        "sucess": "{{member}}, Yay! Você acaba de dar um `ponto de reputação` para {{target}}. <{feliz}>"
+    },
     "staffrole": {
-        "howToUse": "<{info}> Como usar:",
+        "howToUse": "<{duvida}> Como usar:",
         "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - adiciona um cargo ao usuário.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - remove um cargo do usuário.\n`{{prefix}}{{command}} check <@menção/id>` - verifica os cargos do usuário.",
-        "rolesTitle": "<{searchdoc}> Cargos:",
-        "dontHaveRole": "<{warning}> {{member}}, Este **comando** só está **disponível** para {{roles}}.",
-        "invalidRole": "<{warning}> {{member}}, Cargo **não especificado** ou **não encontrado**.",
-        "roleHigher": "<{warning}> {{member}}, Você **não** pode **adicionar ou remover** este cargo.",
-        "hasRole": "<{warning}> {{member}}, O **usuário selecionado** já **possui o cargo** `{{role}}`.",
-        "noHasRole": "<{warning}> {{member}}, O **usuário selecionado** parece **não possuir o cargo** `{{role}}`.",
-        "added": "<{ok}> {{member}}, Você **adicionou o cargo** `{{role}}` ao **usuário** `{{target}}`.",
-        "removed": "<{ok}> {{member}}, Você **removeu o cargo** `{{role}}` do **usuário** `{{target}}`.",
-        "checkTitle": "Cargos de {{user}}:"
+        "rolesTitle": "<{feliz}> Cargos:",
+        "dontHaveRole": "<{duvida}> {{member}}, Este comando só está disponível para {{roles}}.",
+        "invalidRole": "<{duvida}> {{member}}, Cargo não especificado ou não encontrado.",
+        "roleHigher": "<{duvida}> {{member}}, Você não pode **adicionar ou remover** este cargo.",
+        "hasRole": "<{duvida}> {{member}}, O usuário selecionado já possui o cargo `{{role}}`.",
+        "noHasRole": "<{duvida}> {{member}}, O usuário selecionado parece não possuir o cargo `{{role}}`.",
+        "added": "<{ok}> {{member}}, Você `adicionou` o cargo `{{role}}` ao usuário `{{target}}`.",
+        "removed": "<{ok}> {{member}}, Você `removeu` o cargo `{{role}}` do usuário `{{target}}`.",
+        "checkTitle": "Atualmente, esses são os cargos de {{user}}:",
+        "checkRoles": "Cargos atribuídos ao usuário:",
+        "noRoles": "Este usuário não possui nenhum cargo!",
+        "checkAddTitle": "Caso queira adicionar mais cargos ao {{user}}, utilize:",
+        "checkAdd": "`{{prefix}}{{command}} add <@menção/id> <cargo>`"
     }
 }
