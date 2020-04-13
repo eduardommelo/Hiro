@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.discordapp.com/avatars/507292506942210048/1c30bebe60d9d88ee8819f0a9b70eb3d.png" width="240"/>
+  <img src="https://cdn.discordapp.com/avatars/507292506942210048/b418c800a1f670194015863df31d7a2f.png?size=2048" width="240"/>
 </p>
 
 # Hiro - 2.0.0
