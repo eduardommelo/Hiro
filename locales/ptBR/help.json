@@ -1,17 +1,34 @@
 {
     "categories": {
         "-1": "Outros",
-        "0": "Equipe"
+        "0": "Equipe",
+        "1": "Utilidade",
+        "4": "Social"
     },
     "errors": {
         "noDescription": "Não definido!",
         "noUsages": ["Não definido!"],
         "noCategory": "-1"
     },
+    "avatar": {
+        "description": "",
+        "category": "1",
+        "usages": [ "<@menção/id/nickname>" ]
+    },
     "eval": {
         "description": "",
         "category": "0",
         "usages": [ "<código>" ]
+    },
+    "ping": {
+        "description": "",
+        "category": "1",
+        "usages": []
+    },
+    "rep": {
+        "description": "",
+        "category": "4",
+        "usages": [ "<@menção/id>" ]
     },
     "staffrole": {
         "description": "",

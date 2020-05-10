@@ -29,6 +29,6 @@ module.exports = class Rep extends Command {
         userDB.save();
         targetDB.rep.set('total', targetDB.rep.get('total') + 1);
         targetDB.save();
-        message.channel.send(t('commands:rep.sucess', { member, target }));
+        message.channel.send(t('commands:rep.sucess', { member, target: target.username }));
     }
 }

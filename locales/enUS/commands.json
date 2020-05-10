@@ -1,9 +1,20 @@
 {
+    "avatar": {
+        "title": "<{feliz}> **{{target}}'s avatar:**",
+        "download": "Download: **[click here]({{link}})**"
+    },
     "eval": {
         "noCode": "<{duvida}> {{member}}, You must enter a code so that I can execute it.",
         "code": "<{duvida}> Code:",
         "result": "<{feliz}> Result:",
         "error": "<{carente}> Error:"
+    },
+    "rep": {
+        "noAction": "{{member}}, Hm... It looks like you still can't give a `reputation point` yet! <{aviso}>\nCome back **{{time}}** to try again!",
+        "timeFinished": "{{member}}, Yay! <{feliz}> You can already give a reputation point to someone!\n<{duvida}> Just use: `{{prefix}}{{command}} <@mention/id>`",
+        "yourself": "{{member}} **Hey!!** You cann't give `reputation point` to yourself. <{duvida}>",
+        "botMention": "{{member}} **Hey!!** You cann't give `reputation point` to a bot. <{duvida}>",
+        "sucess": "{{member}}, Yay! You gave a `reputation point` to **{{target}}**. <{feliz}>"
     },
     "staffrole": {
         "howToUse": "<{duvida}> How to use:",

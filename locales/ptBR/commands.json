@@ -14,7 +14,7 @@
         "timeFinished": "{{member}}, Yay! <{feliz}> Você já pode dar um ponto de reputação para alguém!\n<{duvida}> Apenas utilize: `{{prefix}}{{command}} <@menção/id>`",
         "yourself": "{{member}} **Hey!!** Você nao pode dar `pontos de reputação` para você mesmo. <{duvida}>",
         "botMention": "{{member}} **Hey!!** Você nao pode dar `pontos de reputação` para um robô. <{duvida}>",
-        "sucess": "{{member}}, Yay! Você acaba de dar um `ponto de reputação` para {{target}}. <{feliz}>"
+        "sucess": "{{member}}, Yay! Você acaba de dar um `ponto de reputação` para **{{target}}**. <{feliz}>"
     },
     "staffrole": {
         "howToUse": "<{duvida}> Como usar:",

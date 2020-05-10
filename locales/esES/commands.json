@@ -1,0 +1,36 @@
+{
+    "avatar": {
+        "title": "<{feliz}> **Avatar de {{target}}:**",
+        "download": "Descargar: **[Haga clic aquí]({{link}})**"
+    },
+    "eval": {
+        "noCode": "<{duvida}> {{member}}, Debes ingresar un código para que pueda ejecutarlo.",
+        "code": "<{duvida}> Código:",
+        "result": "<{feliz}> Resultado:",
+        "error": "<{carente}> Error:"
+    },
+    "rep": {
+        "noAction": "{{member}}, ¡ Hmm, Parece que todavía no puedes darle un `punto de reputación`! <{aviso}>\nVuelva aqui **{{time}}** para intentar de nuevo!",
+        "timeFinished": "{{member}}, Yay! <{feliz}> ¡Ya puedes darle a alguien un punto de reputación!\n<{duvida}> Solo usa: `{{prefix}}{{command}} <@menção/id>`",
+        "yourself": "{{member}} **Hey!!** No puedes darte puntos de reputación. <{duvida}>",
+        "botMention": "{{member}} **Hey!!** No puedes dar `puntos de reputación` a un robot. <{duvida}>",
+        "sucess": "{{member}}, Yay! Acabas de dar un `punto de reputación` a **{{target}}**. <{feliz}>"
+    },
+    "staffrole": {
+        "howToUse": "<{duvida}> Cómo usar:",
+        "usageFormats": "`{{prefix}}{{command}} add <@menção/id> <cargo>` - agrega un rol al usuario.\n`{{prefix}}{{command}} remove <@menção/id> <cargo>` - elimina un rol del usuario.\n`{{prefix}}{{command}} check <@menção/id>` - Verifica las posiciones de los usuarios.",
+        "rolesTitle": "<{feliz}> Cargos:",
+        "dontHaveRole": "<{duvida}> {{member}}, Este comando solo está disponible para {{roles}}.",
+        "invalidRole": "<{duvida}> {{member}}, Trabajo no especificado o no encontrado.",
+        "roleHigher": "<{duvida}> {{member}}, No puede **agregar o eliminar** esta posición.",
+        "hasRole": "<{duvida}> {{member}}, El usuario seleccionado ya tiene la posición. `{{role}}`.",
+        "noHasRole": "<{duvida}> {{member}}, El usuario seleccionado no parece tener el rol `{{role}}`.",
+        "added": "<{ok}> {{member}}, Usted `agregó` el rol `{{role}}` al usuario `{{target}}`.",
+        "removed": "<{ok}> {{member}}, Usted 'eliminó' la posición `{{role}}` al usuario `{{target}}`.",
+        "checkTitle": "Estas son actualmente las posiciones de {{user}}:",
+        "checkRoles": "Posiciones asignadas al usuario:",
+        "noRoles": "¡Este usuario no tiene ningún puesto!",
+        "checkAddTitle": "Si desea agregar más posiciones a la {{user}}, utilize:",
+        "checkAdd": "`{{prefix}}{{command}} add <@menção/id> <cargo>`"
+    }
+}

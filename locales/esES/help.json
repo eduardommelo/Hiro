@@ -1,24 +1,24 @@
 {
     "categories": {
-        "-1": "Others",
-        "0": "Staff",
-        "1": "Util",
+        "-1": "Otros",
+        "0": "Equipo",
+        "1": "Utilidad",
         "4": "Social"
     },
     "errors": {
-        "noDescription": "Not defined!",
-        "noUsage": ["Not defined!"],
+        "noDescription": "¡No definido!",
+        "noUsages": ["¡No definido!"],
         "noCategory": "-1"
     },
     "avatar": {
         "description": "",
         "category": "1",
-        "usages": [ "<@mention/id/nickname>" ]
+        "usages": [ "<@mencionar/id/nickname>" ]
     },
     "eval": {
         "description": "",
         "category": "0",
-        "usages": [ "<code>" ]
+        "usages": [ "<codigo>" ]
     },
     "ping": {
         "description": "",
@@ -28,15 +28,15 @@
     "rep": {
         "description": "",
         "category": "4",
-        "usages": [ "<@mention/id>" ]
+        "usages": [ "<@mencionar/id>" ]
     },
     "staffrole": {
         "description": "",
         "category": "0",
         "usages": [
-            "add <@mention/id> <role>",
-            "remove <@mention/id> <role>",
-            "check <@mention/id>"
+            "add <@mencionar/id> <posición>",
+            "remove <@mencionar/id> <posición>",
+            "check <@mencionar/id>"
         ]
     }
 }
