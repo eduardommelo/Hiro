@@ -1,4 +1,4 @@
-const { Command, Emojis } = require('../util');
+const { Command, Emojis } = require('../../util');
 const { MessageEmbed } = require('discord.js');
 module.exports = class Staff extends Command {
     constructor(client) {

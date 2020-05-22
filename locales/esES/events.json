@@ -1,0 +1,9 @@
+{
+    "message": {
+        "cmdCooldown": {
+            "msg": "{{member}} **Hey!!** Espera más `{{time}}` para poder usar este comando. <{carente}>",
+            "seconds": "{{seconds}} segundos",
+            "ms": "unos pocos milisegundos"
+        }
+    }
+}

@@ -1,4 +1,4 @@
-const { Command, Emojis } = require('../util');
+const { Command } = require('../../util');
 const { MessageEmbed } = require('discord.js');
 module.exports = class Avatar extends Command {
     constructor(client) {

@@ -1,4 +1,4 @@
-const { Command } = require('../util');
+const { Command } = require('../../util');
 const { MessageEmbed } = require('discord.js');
 module.exports = class Eval extends Command {
     constructor(client) {

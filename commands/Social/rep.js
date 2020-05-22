@@ -1,4 +1,4 @@
-const { Command } = require('../util');
+const { Command } = require('../../util');
 const moment = require('moment');
 require('moment-duration-format');
 moment.locale('pt-BR');

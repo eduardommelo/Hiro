@@ -1,12 +1,13 @@
 const { connection } = require('mongoose');
-module.exports = class Staff {
+module.exports = class StaffManager {
     constructor(client) {
         this.client = client;
         this.database = client.database;
+
         this._roles = ['owner', 'subowner', 'operator', 'developer', 'supervisor', 'designer'];
         this._list = new Map();
 
-        connection.on('open', async () => {
+        connection.on('open', async() => {
             const usersDB = await this.database.Users.find({ 'roles': { $in: this._roles }});
             for(var i = 0, length = usersDB.length; i < length; i++) {
                 this.updateCache(usersDB[i]);
@@ -56,8 +57,8 @@ module.exports = class Staff {
         return userDB.roles.some(role => this._roles.includes(role));
     }
     isHigher(role, to_compare = 'designer') {
-        const rolePosition = this._roles.indexOf(role) * (-1)
-        const comparePosition = this._roles.indexOf(to_compare) * (-1)
+        const rolePosition = this._roles.indexOf(role) * (-1);
+        const comparePosition = this._roles.indexOf(to_compare) * (-1);
         return rolePosition > comparePosition;
     }
     get roles() { return this._roles };
