@@ -9,6 +9,11 @@
         "result": "<{feliz}> Result:",
         "error": "<{carente}> Error:"
     },
+    "help": {
+        "inWindow": "{{member}} **Hey!!** I'm already showing you my commands, close the window or wait `2 minutes`. <{feliz}>",
+        "title": "Commands",
+        "mainDescription": "Hello! Here are all my **commands** and their **categories**, i hope you make good use! <{feliz}>\n\nFor more information about the command, use: `{{prefix}}{{command}} <command>`"
+    },
     "rep": {
         "noAction": "{{member}}, Hm... It looks like you still can't give a `reputation point` yet! <{aviso}>\nCome back **{{time}}** to try again!",
         "timeFinished": "{{member}}, Yay! <{feliz}> You can already give a reputation point to someone!\n<{duvida}> Just use: `{{prefix}}{{command}} <@mention/id>`",

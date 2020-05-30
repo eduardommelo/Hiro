@@ -1,9 +1,9 @@
 {
     "categories": {
-        "-1": "Others",
-        "0": "Staff",
-        "1": "Util",
-        "4": "Social"
+        "-1": "Other Commands",
+        "0": "Staff Commands",
+        "1": "Useful Commands",
+        "4": "Social Commands"
     },
     "errors": {
         "noDescription": "Not defined!",
@@ -19,6 +19,14 @@
         "description": "",
         "category": "0",
         "usages": [ "<code>" ]
+    },
+    "help": {
+        "description": "Visualize os meus comandos disponívels.",
+        "category": "1",
+        "usages": [
+            null,
+            "<comando>"
+        ]
     },
     "ping": {
         "description": "",

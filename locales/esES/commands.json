@@ -9,6 +9,11 @@
         "result": "<{feliz}> Resultado:",
         "error": "<{carente}> Error:"
     },
+    "help": {
+        "inWindow": "{{member}} **Hey!!** Ya te estoy mostrando mis comandos, cierra la ventana o espera `2 minutos`. <{feliz}>",
+        "title": "Comandos",
+        "mainDescription": "¡Hola! Aquí están todos mis **comandos** y el tuyo **categorías**, ¡espero que lo aproveches bien! <{feliz}>\n\nMás información sobre el comando use: `{{prefix}}{{command}} <comando>`"
+    },
     "rep": {
         "noAction": "{{member}}, ¡ Hmm, Parece que todavía no puedes darle un `punto de reputación`! <{aviso}>\nVuelva aqui **{{time}}** para intentar de nuevo!",
         "timeFinished": "{{member}}, Yay! <{feliz}> ¡Ya puedes darle a alguien un punto de reputación!\n<{duvida}> Solo usa: `{{prefix}}{{command}} <@menção/id>`",

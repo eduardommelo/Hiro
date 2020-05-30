@@ -1,9 +1,9 @@
 {
     "categories": {
-        "-1": "Otros",
-        "0": "Equipo",
-        "1": "Utilidad",
-        "4": "Social"
+        "-1": "Otros comandos",
+        "0": "Comandos de Equipo",
+        "1": "Comandos Útiles",
+        "4": "Comandos Sociales"
     },
     "errors": {
         "noDescription": "¡No definido!",
@@ -19,6 +19,14 @@
         "description": "",
         "category": "0",
         "usages": [ "<codigo>" ]
+    },
+    "help": {
+        "description": "Ver mis comandos disponibles.",
+        "category": "1",
+        "usages": [
+            null,
+            "<comando>"
+        ]
     },
     "ping": {
         "description": "",

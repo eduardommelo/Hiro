@@ -28,7 +28,8 @@ module.exports = class Base {
         const cmdRun = this.client.register.commands.find(c => c.command === command || c.aliases.includes(command));
         if(cmdRun) {
             const inCooldown = this._cooldown.commands.get(message.author.id);
-            const cooldown = Date.now() - inCooldown;
+            let cooldown = 3000;
+            if(inCooldown) cooldown = Date.now() - inCooldown;
             if(!inCooldown || cooldown >= 3000) {
                 this._cooldown.commands.set(message.author.id, Date.now());
                 cmdRun.run({message, args, argsAlt, prefix, command, userDB, guildDB, t, firstUpperLetter: this.firstUpperLetter});
