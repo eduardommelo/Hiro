@@ -1,6 +1,8 @@
 const { Client } = require('discord.js');
 const { Config, Constants, Base, Functions: { Database, Register, Staff } } = require('../util');
-module.exports =  class Hiro extends Client {
+const config = require('./nodes')
+
+module.exports = class Hiro extends Client {
     constructor(options = {}) {
         super();
 
@@ -9,6 +11,7 @@ module.exports =  class Hiro extends Client {
         this._owner = options.owner || '';
         this._prefix = options.prefix;
         this._constants = Constants;
+        this.nodes = config.nodes;
 
         this.register = new Register(this);
         this.database = new Database(this);
@@ -21,10 +24,12 @@ module.exports =  class Hiro extends Client {
         await this.register.registerEvents('listeners');
         return super.login(token);
     }
+
     async shardsInfo(prop) {
         const results = await this.shard.fetchClientValues(prop);
         return results.reduce((prev, val) => prev + val, 0);
     }
+
     get token() { return this._token };
     get owner() { return this._owner };
     get config() { return this._config };

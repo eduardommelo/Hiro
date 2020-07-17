@@ -37,5 +37,24 @@
         "noRoles": "This user doesn't have any role.",
         "checkAddTitle": "If you want to add more roles to {{user}}, use:",
         "checkAdd": "`{{prefix}}{{command}} add <@mention/id> <role>`"
+    },
+    "play": {
+        "notChannel": "<{aviso}> {{member}}, join a voice channel!",
+        "noArgs": "<{duvida}> {{member}}, you must name a song to play.",
+        "queue": "<{ok}> Added to queue `{{music}}`.",
+        "playing": "Playing now: `{{musicName}}`, requested by **{{author}}**.",
+        "volumeType": "Enter the `volume`.",
+        "volume": "The volume set was: **{{volume}}**", 
+        "skip": "Music skipped successfully!",
+        "addedVote": "You have `already` voted.",
+        "finaleVote": "The voting is over! The song was skipped successfully.",
+        "addVote": "You successfully voted! **[{{of}}/{{all}}]**",
+        "paused": "The music it's not `paused`.",
+        "resumedMusic": "Music was `successfully` returned",
+        "notPlaying": "There is no track playing.",
+        "pausedWithSucess": "Music paused successfully!",
+        "isPaused": "the music is `already` paused!",
+        "page": "Page {{of}} of {{until}}.",
+        "queueMap": "**[{{musicName}}]({{musicUrl}})** - Requested by `{{authorTrack}}`"
     }
 }

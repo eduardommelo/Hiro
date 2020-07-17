@@ -37,5 +37,17 @@
         "noRoles": "¡Este usuario no tiene ningún puesto!",
         "checkAddTitle": "Si desea agregar más posiciones a la {{user}}, utilize:",
         "checkAdd": "`{{prefix}}{{command}} add <@menção/id> <cargo>`"
+    },
+    "play": {
+        "notChannel": "<{aviso}> {{member}}, únete a un canal de voz!",
+        "queue": "<{ok}> Agregado a la cola {{music}}",
+        "playing": "Tocando ahora: `{{musicName}}`, solicitado por **{{author}}**.",
+        "noArgs": "<{duvida}> {{member}}, debes nombrar una canción para tocar.",
+        "volumeType": "Ingrese el `volumen`.",
+        "volume": "El volumen establecido fue: **{{volume}}**",
+        "skip": "¡La música se saltó con éxito!",
+        "addedVote": "Usted ya ha votado.",
+        "finaleVote": "¡La votación ha terminado! La canción se saltó con éxito.",
+        "addVote": "¡Votaste con éxito! **[{{of}}/{{all}}]**"
     }
 }

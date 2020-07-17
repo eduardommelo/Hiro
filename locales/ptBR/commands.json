@@ -37,5 +37,22 @@
         "noRoles": "Este usuário não possui nenhum cargo!",
         "checkAddTitle": "Caso queira adicionar mais cargos ao {{user}}, utilize:",
         "checkAdd": "`{{prefix}}{{command}} add <@menção/id> <cargo>`"
+    },
+    "play": {
+        "notChannel": "<{aviso}> {{member}}, entre em um canal de voz!",
+        "playing": "Tocando agora: `{{musicName}}`, pedida por **{{author}}**.",
+        "queue": "<{ok}> Adicionada música à fila `{{music}}`",
+        "noArgs": "<{duvida}> {{member}}, você deve colocar o nome de alguma música para tocar.",
+        "volumeType": "Informe o `volume`.",
+        "volume": "O volume definido foi: **{{volume}}**",
+        "skip": "Música pulada com sucesso!",
+        "addedVote": "Você já voltou.",
+        "finaleVote": "A votação acabou! Música `pulada` com sucesso.",
+        "notPlaying": "Não tem nenhuma faixa tocando.",
+        "resumedMusic": "A música foi `retomada` com sucesso!",
+        "pausedWithSucess": "Música pausada com `sucesso`!",
+        "isPaused": "A música já está `pausada`!",
+        "page": "Pagina {{of}} de {{until}}.",
+        "queueMap": "**[{{musicName}}]({{musicUrl}})** - Pedida por `{{authorTrack}}`"
     }
 }

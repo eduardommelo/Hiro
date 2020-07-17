@@ -8,6 +8,6 @@ module.exports = class Ping extends Command {
         })
     }
     async run({message, argsAlt, prefix, command, userDB, t}) {
-        message.channel.send('oi')
+        message.channel.send('isso é temporario pq o animal do marcio nao fez\n\nLatência: **' + Math.round(this.client.ws.ping) + '**')
     }
 }

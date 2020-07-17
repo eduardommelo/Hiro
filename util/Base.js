@@ -14,9 +14,10 @@ module.exports = class Base {
         const userDB = await this.database.findOrCreate('Users', {_id: message.author.id});
         const guildDB = await this.database.findOrCreate('Guilds', {_id: message.guild.id});
         const t = (path, values) => this.translate(guildDB.lang, path, values);
-        this.emitCommand(message, userDB, guildDB, t);
+        const music = this.client.music;
+        this.emitCommand(message, userDB, guildDB, t, music);
     }
-    emitCommand(message, userDB, guildDB, t) {
+    emitCommand(message, userDB, guildDB, t, music) {
         const id = this.client.user.id;
         const prefixes = [guildDB.prefix || this.client.prefix, `<@${id}>`, `<@!${id}>`];
         const prefix = prefixes.find(p => message.content.startsWith(p)) || false;
@@ -32,7 +33,7 @@ module.exports = class Base {
             if(inCooldown) cooldown = Date.now() - inCooldown;
             if(!inCooldown || cooldown >= 3000) {
                 this._cooldown.commands.set(message.author.id, Date.now());
-                cmdRun.run({message, args, argsAlt, prefix, command, userDB, guildDB, t, firstUpperLetter: this.firstUpperLetter});
+                cmdRun.run({message, args, argsAlt, prefix, command, userDB, guildDB, t, firstUpperLetter: this.firstUpperLetter, music });
             } else {
                 const seconds = Math.floor(((inCooldown + 3000) - Date.now())/1000);
                 message.channel.send(t('events:message.cmdCooldown.msg', { 
